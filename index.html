@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gauri Rice — Shrejal Impex Pvt. Ltd. | Premium Basmati Since 1960</title>
+  <meta name="description"
+    content="Shrejal Impex Pvt. Ltd. — leading supplier of 1121 Basmati Long Grain Steam Rice in India since 1960. Home of Gauri, ST, Saira Banu, Zara, Era &amp; Shahi Bharat.">
+  <link rel="icon" href="./images/gauri rice logo.png" type="image/svg+xml">
+
+  <!-- Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Original brand styling kept for colors / type / decorative pieces
+       (marquee, grain icons, stat counters, testimonial cards, etc.) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* ---- Bootstrap ↔ brand-theme bridge ---- */
+    /* Load order: bootstrap.min.css first, then style.css/components.css —
+       so every design-system rule below (colors, .container, .btn, .section-pad,
+       .site-header nav system, etc.) wins over Bootstrap's defaults on the
+       properties it sets. Bootstrap is only supplying the *grid* (row/col),
+       a few layout utilities (d-flex, gap, ratio) and responsive breakpoints
+       for the sections below the header. */
+
+    .img-cover {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    .grain-field,
+    .figure-panel {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .cat-media,
+    .brand-media {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cat-media img,
+    .brand-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Card hover-lift, reused for cat/brand/testimonial cards */
+    .lift-card {
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .lift-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+    }
+
+    .state-chip {
+      display: inline-block;
+    }
+
+    /* body needs top padding to clear the fixed .site-header */
+    body {
+      padding-top: 92px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <!-- Original nav system kept as-is: .site-header is `position:fixed` with a
+       scroll-triggered blur (main.js toggles .scrolled), and on screens under
+       920px .nav-links becomes an off-canvas panel driven by #navToggle
+       toggling .open on #navLinks (also in main.js). Bootstrap's navbar
+       component doesn't match this CSS, so it's intentionally not used here. -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-mark">
+        <img src="./images/gauri rice logo.png" alt="" class="main-logo">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="brands.html">Brands</a>
+        <a href="vision.html">Vision</a>
+        <a href="infrastructure.html">Infrastructure</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+        <a href="contact.html#enquiry" class="btn btn-primary">Enquire Now
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="eyebrow">Est. 1960 · Naya Bazar, Delhi</div>
+          <h1 class="display-5 fw-bold mt-2">India's rice, grown into <em class="color-em">Six</em> brands you can trust.</h1>
+          <p class="lede mt-3">Shrejal Impex Pvt. Ltd. is a leading supplier of 1121 Basmati Long Grain Steam Rice,
+            sold and cooked across more than 5 lakh sale counters, restaurants and hotels in 13+ Indian states.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+            <a href="brands.html"
+              class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2">
+              Explore Our Brands
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-outline-dark btn-lg">Request a Quote</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2 position-relative">
+          <div class="grain-field position-relative">
+            <img class="img-cover" src="./images/Rice-new.png" alt="Close-up macro shot of uncooked basmati rice grains"
+              loading="eager">
+          </div>
+          <div class="hero-badge position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-3 shadow-sm">
+            <span class="num d-block fs-3 fw-bold">5L+</span>
+            <span class="lab small">sale counters, restaurants &amp; hotels served nationwide</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GRAIN DIVIDER ================= -->
+  <div class="grain-row" style="color:var(--saffron)">
+    <svg viewBox="0 0 1200 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="gp1" width="40" height="36" patternUnits="userSpaceOnUse">
+          <path d="M20 4c-3 4-5 9-5 13s2 8 5 13c3-5 5-9 5-13s-2-9-5-13z" fill="currentColor" opacity="0.4" />
+        </pattern>
+      </defs>
+      <rect width="1200" height="36" fill="url(#gp1)" />
+    </svg>
+  </div>
+
+  <!-- ================= STAT STRIP ================= -->
+  <section class="stat-strip py-5">
+    <div class="container">
+      <div class="row gy-4 text-center">
+        <div class="col-6 col-md-3 stat">
+          <div class="figure fs-2 fw-bold"><span data-count="1960" data-suffix="">0</span></div>
+          <div class="label small">Est. — trading in Asia's largest grain market</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="figure fs-2 fw-bold"><span data-count="600" data-suffix=" MT">0</span></div>
+          <div class="label small">Processed &amp; packed daily at our Delhi plant</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="figure fs-2 fw-bold"><span data-count="20000" data-suffix=" MT">0</span></div>
+          <div class="label small">Storage capacity at any given time</div>
+        </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="figure fs-2 fw-bold"><span data-count="6" data-suffix="">0</span></div>
+          <div class="label small">Brands under one house of quality</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee overflow-hidden">
+    <div class="marquee-track d-flex">
+      <span class="px-4">Gauri</span><span class="px-4">ST</span><span class="px-4">Saira Banu</span><span
+        class="px-4">Zara</span><span class="px-4">Era</span><span class="px-4">Shahi Bharat</span>
+      <span class="px-4">Gauri</span><span class="px-4">ST</span><span class="px-4">Saira Banu</span><span
+        class="px-4">Zara</span><span class="px-4">Era</span><span class="px-4">Shahi Bharat</span>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT PREVIEW ================= -->
+  <section class="section-pad py-5">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="eyebrow">Our story</div>
+          <h2 class="mt-2">A trading legacy from Old Delhi's grain heart.</h2>
+          <p class="lede mt-3">Founded in 1960 and formally incorporated as Shrejal Impex Pvt. Ltd., our corporate
+            office sits in Naya Bazar, Lahori Gate — Asia's largest grain market — giving us direct access to India's
+            finest paddy and rice buyers alike. Six decades on, that foundation is still what "delighting the
+            customer" is built on.</p>
+          <ul class="check-list list-unstyled mt-3">
+            <li class="d-flex gap-2 mb-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> One-stop supplier: Steam, Parboiled, Raw &amp; Brown rice</li>
+            <li class="d-flex gap-2 mb-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Procurement team with 50+ years combined experience</li>
+            <li class="d-flex gap-2 mb-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg> Varieties spanning 1121, 1509, 1401, Sugandha, Sona Mussorrie &amp; more</li>
+          </ul>
+          <a href="about.html" class="btn btn-outline-dark mt-3 d-inline-flex align-items-center gap-2">
+            Read our full story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="figure-panel ratio ratio-4x3">
+            <img class="img-cover" src="./images/rice.png"
+              alt="Old Delhi grain market where Shrejal Impex began trading in 1960" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="section-pad py-5" style="background:var(--husk-deep)">
+    <div class="container">
+      <div class="row align-items-end gy-3 mb-4">
+        <div class="col-lg-7">
+          <div class="eyebrow">What we process</div>
+          <h2 class="mt-2">Two processes. Every state of rice, done right.</h2>
+        </div>
+        <div class="col-lg-5">
+          <p class="lede mb-0">From our Buhler-equipped Delhi plant, every batch runs through the same zero-defect
+            standard — whichever process it needs.</p>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <a href="brands.html#steam" class="cat-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none">
+            <div class="cat-media">
+              <img src="./images/rice_2.png" alt="Steamed basmati rice grains" loading="lazy">
+            </div>
+            <span class="tag badge">Process 01</span>
+            <h3 class="mt-3 h4">Steam Rice</h3>
+            <p>Our flagship process — 1121 Basmati Long Grain rice, steamed for aroma and elongation, headlined by
+              the Gauri portfolio's sixteen variants.</p>
+            <span class="cat-link d-inline-flex align-items-center gap-2">View steam rice range
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="brands.html#parboiled" class="cat-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none">
+            <div class="cat-media">
+              <img src="./images/Rice 3.png" alt="Parboiled rice grains" loading="lazy">
+            </div>
+            <span class="tag badge">Process 02</span>
+            <h3 class="mt-3 h4">Parboiled Rice</h3>
+            <p>Wetted, steamed and dried before milling — lower brokens, firmer grain and higher nutrient retention
+              for bulk and institutional buyers.</p>
+            <span class="cat-link d-inline-flex align-items-center gap-2">View parboiled range
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BRANDS PREVIEW ================= -->
+  <section class="section-pad py-5">
+    <div class="container">
+      <div class="row align-items-end gy-3 mb-4">
+        <div class="col-lg-8">
+          <div class="eyebrow">House of brands</div>
+          <h2 class="mt-2">Six names. One quality standard.</h2>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="brands.html" class="btn btn-outline-dark d-inline-flex align-items-center gap-2">
+            See full catalogue
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-6 col-md-4">
+          <a href="brands.html#gauri"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#8C3325">G</div>
+            <h4 class="mt-3">Gauri</h4>
+            <p class="small">Our flagship 1121 Basmati — "Your search for the best quality rice ends here."</p>
+            <div class="variants badge">16 Variants</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a href="brands.html#zara"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#B8783A">Z</div>
+            <h4 class="mt-3">Zara</h4>
+            <p class="small">Everyday long-grain basmati, priced for high-turnover retail counters.</p>
+            <div class="variants badge">6 Variants</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a href="brands.html#saira"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#6E7C46">S</div>
+            <h4 class="mt-3">Saira Banu</h4>
+            <p class="small">Sella &amp; Sona Mansoori specialists for the food-service segment.</p>
+            <div class="variants badge">4 Variants</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a href="brands.html#st"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#A6551F">ST</div>
+            <h4 class="mt-3">ST Basmati</h4>
+            <p class="small">Consistent, everyday basmati built for volume distributors.</p>
+            <div class="variants badge">5 Variants</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a href="brands.html#era"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#C2952E">E</div>
+            <h4 class="mt-3">Era</h4>
+            <p class="small">A modern-value basmati line for growing regional markets.</p>
+            <div class="variants badge">5 Variants</div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a href="brands.html#shahi"
+            class="brand-card lift-card d-block p-4 rounded-4 h-100 text-decoration-none text-center">
+            <div class="brand-mark-badge mx-auto" style="color:#7A4A8C">SB</div>
+            <h4 class="mt-3">Shahi Bharat</h4>
+            <p class="small">A royal-tier grain for celebrations, weddings &amp; banquets.</p>
+            <div class="variants badge">4 Variants</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INFRASTRUCTURE PREVIEW ================= -->
+  <!-- ================= INFRASTRUCTURE PREVIEW ================= -->
+  <section class="section-pad py-5" style="background:var(--husk-deep)">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="figure-panel ratio ratio-4x3">
+            <img class="img-cover" src="./images/Rice 4.png"
+              alt="Rice milling and sorting machinery at the Delhi processing plant" loading="lazy">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="eyebrow">Behind the grain</div>
+          <h2 class="mt-2">1,55,000 sq ft. Zero-defect policy.</h2>
+          <p class="lede mt-3">Every sack passes through Pre-Fine Cleaners, De-stoners with Turbo Air Extraction,
+            Precision Sizers, Length Graders and a Bühler "Z Series" sorter — under lab-tested, controlled
+            supervision at every step.</p>
+          <a href="infrastructure.html" class="btn btn-outline-dark mt-3 d-inline-flex align-items-center gap-2">
+            Tour the plant
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DISTRIBUTION ================= -->
+  <section class="section-pad py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="eyebrow">Where we deliver</div>
+          <h2 class="mt-2">On the plate in 13+ states.</h2>
+        </div>
+      </div>
+      <div class="state-cloud d-flex flex-wrap gap-2">
+        <span class="state-chip badge">Delhi</span><span class="state-chip badge">Uttar Pradesh</span><span
+          class="state-chip badge">Rajasthan</span>
+        <span class="state-chip badge">Madhya Pradesh</span><span class="state-chip badge">Maharashtra</span><span
+          class="state-chip badge">Tamil Nadu</span>
+        <span class="state-chip badge">West Bengal</span><span class="state-chip badge">Jammu &amp; Kashmir</span><span
+          class="state-chip badge">Gujarat</span>
+        <span class="state-chip badge">Andhra Pradesh</span><span class="state-chip badge">Telangana</span><span
+          class="state-chip badge">Uttarakhand</span>
+        <span class="state-chip badge">Bihar</span><span class="state-chip badge">+ more</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section-pad dark py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="eyebrow">From our counters</div>
+          <h2 class="mt-2">What buyers say.</h2>
+        </div>
+      </div>
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="testi-card lift-card p-4 rounded-4 h-100">
+            <span class="quote-mark fs-1 d-block">"</span>
+            <p>Amazing rice — consistent quality, every single batch.</p>
+            <div class="who d-flex align-items-center gap-2 mt-3">
+              <div class="avatar">SC</div><span>Sandeep Chauhan</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testi-card lift-card p-4 rounded-4 h-100">
+            <span class="quote-mark fs-1 d-block">"</span>
+            <p>Feedback from my customers has been excellent, and my counter sales have grown multifold since
+              switching.</p>
+            <div class="who d-flex align-items-center gap-2 mt-3">
+              <div class="avatar">TA</div><span>Tanveer Ahmed</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testi-card lift-card p-4 rounded-4 h-100">
+            <span class="quote-mark fs-1 d-block">"</span>
+            <p>Great price for genuinely fantastic rice — hard combination to find.</p>
+            <div class="who d-flex align-items-center gap-2 mt-3">
+              <div class="avatar">K</div><span>Kunal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section-pad py-5">
+    <div class="container">
+      <div
+        class="cta-band rounded-4 p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-center text-md-start">
+        <h2 class="mb-0">Ready to stock India's most trusted basmati?</h2>
+        <a href="contact.html#enquiry"
+          class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2 flex-shrink-0">
+          Get a Wholesale Quote
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-md-6 col-lg-4 footer-brand">
+          <a href="index.html" class="brand-mark d-flex align-items-center gap-2" style="color:var(--cream)">
+            <svg class="grain-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                d="M12 2.2C8.5 5 6.3 9.6 6.3 13.4c0 4.6 2.4 8.1 5.7 9.4 3.3-1.3 5.7-4.8 5.7-9.4 0-3.8-2.2-8.4-5.7-11.2Z"
+                fill="var(--saffron)" />
+            </svg>
+            <span>Gauri Rice<small class="d-block" style="color:rgba(243,238,220,0.5)">Shrejal Impex Pvt.
+                Ltd.</small></span>
+          </a>
+          <p class="mt-3">Leading supplier of 1121 Basmati Long Grain Steam Rice in India, trading from Asia's
+            largest grain market since 1960.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Explore</h4>
+          <div class="d-flex flex-column gap-2 mt-2">
+            <a href="about.html">About Us</a>
+            <a href="brands.html">Brands</a>
+            <a href="vision.html">Vision</a>
+            <a href="infrastructure.html">Infrastructure</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Our Brands</h4>
+          <div class="d-flex flex-column gap-2 mt-2">
+            <a href="brands.html#gauri">Gauri</a>
+            <a href="brands.html#zara">Zara</a>
+            <a href="brands.html#saira">Saira Banu</a>
+            <a href="brands.html#st">ST Basmati</a>
+            <a href="brands.html#era">Era</a>
+            <a href="brands.html#shahi">Shahi Bharat</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <h4>Corporate Office</h4>
+          <div class="d-flex flex-column gap-2 mt-2">
+            <a href="https://maps.google.com/?q=526A+Lahori+Gate+Naya+Bazar+Delhi+110006" target="_blank"
+              rel="noopener">526A, Lahori Gate<br>Naya Bazar, Delhi–110006</a>
+            <a href="mailto:enquiry@gauririce.com">enquiry@gauririce.com</a>
+            <a href="tel:+918882435334">+91 88824 35334</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer-bottom d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-5 pt-4 border-top">
+        <span>© <span data-year></span> Shrejal Impex Pvt. Ltd. All rights reserved.</span>
+        <span>Concept redesign — design preview, not yet the live site.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

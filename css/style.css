@@ -1,0 +1,708 @@
+/* =========================================================
+   GAURI RICE — Design System
+   Display: Fraunces | Body: Manrope | Data: JetBrains Mono
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Color tokens ---- */
+  --husk: #F3EEDC;
+  /* base background — unhulled rice */
+  --husk-deep: #E8DFC2;
+  /* card / section tint */
+  --cream: #FBF9F1;
+  /* lightest surface */
+  --ink: #211C14;
+  /* primary text, warm near-black */
+  --ink-soft: #55503F;
+  /* secondary text */
+  --paddy: #46512F;
+  /* olive paddy green — secondary accent */
+  --paddy-deep: #1B2016;
+  /* night-field — dark section bg */
+  --paddy-mid: #2A3020;
+  /* dark section card */
+  --saffron: #E0912E;
+  /* primary accent — marigold / saffron */
+  --saffron-light: #F2B968;
+  --sindoor: #8C3325;
+  /* deep maroon-red — sparing use */
+  --line: rgba(33, 28, 20, 0.12);
+  --line-dark: rgba(243, 238, 220, 0.14);
+
+  /* ---- Type ---- */
+  --f-display: 'Fraunces', serif;
+  --f-body: 'Manrope', sans-serif;
+  --f-mono: 'JetBrains Mono', monospace;
+
+  --container: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--husk);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-display);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--saffron);
+  display: inline-block;
+}
+
+.dark .eyebrow {
+  color: var(--saffron-light);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.03;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.lede {
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  color: var(--ink-soft);
+  max-width: 56ch;
+  line-height: 1.65;
+}
+
+.dark .lede {
+  color: rgba(243, 238, 220, 0.72);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 100px;
+  font-family: var(--f-body);
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid transparent;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), background .25s, color .25s, border-color .25s, box-shadow .35s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--saffron);
+  color: var(--ink);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background: var(--sindoor);
+  color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(140, 51, 37, 0.55);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.dark .btn-ghost {
+  color: var(--cream);
+  border-color: var(--line-dark);
+}
+
+.dark .btn-ghost:hover {
+  border-color: var(--cream);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .3s;
+}
+
+.btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* ---- Nav ---- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  transition: background .4s, padding .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.scrolled {
+  background: rgba(243, 238, 220, 0.86);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.brand-mark .grain-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.brand-mark span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1;
+}
+
+.brand-mark small {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-links a {
+  padding: 10px 16px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border-radius: 100px;
+  transition: background .25s, color .25s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ink);
+  background: rgba(33, 28, 20, 0.06);
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  margin: 5px 0;
+  transition: .3s;
+}
+
+.main-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  background: black;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+@media (max-width:920px) {
+  .nav-links {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(78vw, 340px);
+    height: 100vh;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 32px 32px;
+    gap: 6px;
+    transform: translateX(100%);
+    transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 17px;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 110;
+  }
+
+  .nav-cta .btn-ghost {
+    display: none;
+  }
+}
+
+/* ---- Grain divider (signature element) ---- */
+.grain-row {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.grain-row svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Sections ---- */
+section {
+  position: relative;
+}
+
+.section-pad {
+  padding: 110px 0;
+}
+
+@media (max-width:720px) {
+  .section-pad {
+    padding: 72px 0;
+  }
+}
+
+.dark {
+  background: var(--paddy-deep);
+  color: var(--cream);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: var(--cream);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  margin-top: 14px;
+  max-width: 16ch;
+}
+
+/* ---- Reveal on scroll ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger>* {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal-stagger.in>* {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.in>*:nth-child(1) {
+  transition-delay: .02s;
+}
+
+.reveal-stagger.in>*:nth-child(2) {
+  transition-delay: .09s;
+}
+
+.reveal-stagger.in>*:nth-child(3) {
+  transition-delay: .16s;
+}
+
+.reveal-stagger.in>*:nth-child(4) {
+  transition-delay: .23s;
+}
+
+.reveal-stagger.in>*:nth-child(5) {
+  transition-delay: .30s;
+}
+
+.reveal-stagger.in>*:nth-child(6) {
+  transition-delay: .37s;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--paddy-deep);
+  color: rgba(243, 238, 220, 0.75);
+  padding: 80px 0 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.footer-grid h4 {
+  color: var(--cream);
+  font-family: var(--f-body);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer-grid a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14.5px;
+  transition: color .2s, transform .2s;
+}
+
+.footer-grid a:hover {
+  color: var(--saffron-light);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(243, 238, 220, 0.5);
+}
+
+.footer-brand p {
+  margin-top: 14px;
+  max-width: 34ch;
+  font-size: 14.5px;
+  color: rgba(243, 238, 220, 0.65);
+}
+
+@media (max-width:860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Utility ---- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mt-48 {
+  margin-top: 48px;
+}
+
+.mt-64 {
+  margin-top: 64px;
+}
+
+/* breadcrumb / page hero (inner pages) */
+.page-hero {
+  padding: 168px 0 70px;
+}
+
+.page-hero .eyebrow {
+  margin-bottom: 18px;
+}
+
+.crumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 22px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.crumbs a:hover {
+  color: var(--sindoor);
+}
+
+.dark .crumbs {
+  color: rgba(243, 238, 220, 0.55);
+}
+
+/* =========================================================
+   PATCH — Bootstrap ⇄ design-system conflict fixes
+   ========================================================= */
+
+/* 1) FIX: section spacing collapsing / inconsistent gaps.
+   Bootstrap's `py-5` utility ships with !important in the compiled
+   CSS, so it was beating .section-pad's 110px rhythm even though
+   style.css loads after bootstrap.min.css. Force our own rhythm to
+   win on every section that carries both a semantic class and py-5. */
+section.py-5 {
+  padding-top: 110px !important;
+  padding-bottom: 110px !important;
+}
+
+@media (max-width: 720px) {
+  section.py-5 {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+}
+
+/* 2) FIX: btn-outline-dark (used for "Request a Quote", "See full
+   catalogue", "Tour the plant", "Read our full story") was never
+   defined in the design system, and .btn's own
+   `border: 1px solid transparent` was overriding Bootstrap's
+   outline border color — so it rendered as plain text. */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-outline-dark:hover {
+  background: var(--ink);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.dark .btn-outline-dark {
+  color: var(--cream);
+  border-color: var(--line-dark);
+}
+
+.dark .btn-outline-dark:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* 3) FIX: stat strip numbers overlapping/compressed. No .stat-strip
+   rules existed in this file (they likely live in components.css and
+   are conflicting with Bootstrap's grid there) — defining them here
+   guarantees the 4-column layout holds and text doesn't collide. */
+.stat-strip {
+  background: var(--paddy-deep);
+  color: var(--cream);
+}
+
+.stat-strip .stat {
+  min-width: 0;
+  padding: 0 16px;
+  border-left: 1px solid var(--line-dark);
+}
+
+.stat-strip .row > .stat:first-child,
+.stat-strip .row > [class*="col-"]:first-child .stat {
+  border-left: none;
+}
+
+.stat-strip .figure {
+  color: var(--saffron);
+  font-family: var(--f-mono);
+  white-space: nowrap;
+}
+
+.stat-strip .label {
+  margin-top: 6px;
+  color: rgba(243, 238, 220, 0.65);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .stat-strip .stat { border-left: none; }
+}
+
+.color-em{
+  color: red;
+}
